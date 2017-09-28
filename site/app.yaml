@@ -1,0 +1,18 @@
+runtime: php55
+api_version: 1
+threadsafe: yes
+
+skip_files:
+ - ^node_modules$
+
+handlers:
+  - url: /favicon\.ico
+    static_files: favicon.ico
+    upload: favicon\.ico
+
+  - url: /assets
+    static_dir: assets
+    expiration: 365d
+
+  - url: /.*
+    script: index.html
