@@ -9,11 +9,78 @@
   <!-- build:css assets/css/fullsite.css -->
   <link href="assets/css/reset.css" rel="stylesheet" type="text/css" media="all" />
   <link href="assets/css/site.css" rel="stylesheet" type="text/css" media="all" />
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:200,300,400,400i,500,600,700%7CMerriweather:300,300i" rel="stylesheet">
   <!-- endbuild -->
 </head>
 <body>
-  <div class="section-header">
+  <div class="container">
+    <div class="section-header">
 
+    </div>
+    <section class="phase">
+      <h2 class="phase-title">Galeria</h2>
+      <div class="section-gallery">
+        <img src="assets/img/gallery-01.jpg" alt="Galeria 01" />
+        <img src="assets/img/gallery-02.jpg" alt="Galeria 02" />
+        <img src="assets/img/gallery-03.jpg" alt="Galeria 03" />
+        <img src="assets/img/gallery-04.jpg" alt="Galeria 04" />
+      </div>
+    </section>
+    <section class="phase">
+      <h2 class="phase-title">Andamento das obras</h2>
+      <div class="section-build">
+        <img src="assets/img/tabela-obras.jpg" alt="Tabela de obras">
+      </div>
+    </section>
+    <section class="phase">
+      <h2 class="phase-title">Como chegar</h2>
+      <div class="section-location">
+        <img src="assets/img/como-chegar.jpg" alt="Como chegar">
+      </div>
+    </section>
+    <section class="phase">
+      <h2 class="phase-title">Contato</h2>
+      <div class="section-contact">
+        <form class="form">
+          <input type="text" placeholder="Nome" />
+          <input type="text" placeholder="Email" />
+          <input type="text" placeholder="Telefone" />
+          <button>cadastrar</button>
+       </form>
+      </div>
+    </section>
+    <section class="phase white">
+      <div class="section-partners">
+        <img src="assets/img/logo-avt.png" alt="AVT">
+      </div>
+    </section>
   </div>
+
+  <!-- <script src="assets/js/jquery.min.js"></script> -->
+  <script>
+  // var formulario = new FormData();
+  //   formulario.append("nome", nome);
+  //   formulario.append("telefone", celular);
+  //   formulario.append("email", email);
+  //   formulario.append("interesse", "Jardim dos Manacas");
+  //   formulario.append("comosoube", "Internet");
+
+  //   var settings = {
+  //     "async": true,
+  //     "crossDomain": true,
+  //     "url": "http://aquisevivebem.com.br/paginas/acoes.php?op=parte",
+  //     "method": "POST",
+  //     "processData": false,
+  //     "contentType": false,
+  //     "mimeType": "multipart/form-data",
+  //     "data": formulario,
+  //     "context": this
+  //   }
+
+  //   $.ajax(settings).done(function (response) {
+  //     this.setState({ data: formulario, statusIsDisabled: false, statusMessage: 'Obrigado por se cadastrar !', statusType: 'success' });
+  //   });
+
+  </script>
 </body>
 </html>
