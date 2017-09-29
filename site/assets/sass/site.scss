@@ -16,21 +16,64 @@ body {
 }
 
 .menu {
-  background: #8B9C7C;
+  background: #9BAA8B;
   height: 40px;
+  padding: 0 10px;
+
+  .nav-right {
+    @include flexbox;
+    @include justify-content(flex-end);
+    @include align-items(center);
+    list-style-type: none;
+    margin: 0;
+    padding: 12px 0 0 0;
+
+    li {
+      padding-left: 15px;
+
+      a {
+        color: #fff;
+        text-transform: uppercase;
+        text-decoration: none;
+        font-weight: 700;
+        font-size: 0.8em;
+
+        &:hover {
+          text-decoration: none;
+          color: #6A6D67;
+        }
+      }
+    }
+  }
 }
 
 .section-header {
-  background-color: #FFFFFF;
-  min-height: 550px;
-  background-image: url(../img/banner_completo.png);
-  background-repeat: no-repeat;
-  background-position: left top;
-  background-size: 100% 100%;
+  background: #FFFFFF url(../img/bg-top-bar.png) repeat-x left top;
   margin-bottom: -20px;
+
+  .container {
+    background-image: url(../img/banner_completo.png);
+    background-repeat: no-repeat;
+    background-position: left top;
+    background-size: 100% 100%;
+    min-height: 410px;
+
+    @include media("<700px") {
+      min-height: 268px;
+    }
+
+    @include media("<1040px") {
+      min-height: 320px;
+    }
+
+  }
 }
 
 .phase {
+
+  .container .phase-title {
+    @extend .phase-title;
+  }
 
   .phase-title {
     background: url(../img/barra_blank.png) no-repeat center center;
@@ -54,6 +97,7 @@ body {
   @include justify-content(space-around);
   @include align-items(center);
   margin-bottom: 35px;
+  padding: 0 10px;
 
   img {
     width: 22%;
@@ -66,6 +110,11 @@ body {
   @include justify-content(center);
   @include align-items(center);
   margin-bottom: 35px;
+  padding: 0 10px;
+
+  img {
+    max-width: 100%;
+  }
 }
 
 .section-location {
@@ -74,12 +123,14 @@ body {
   @include justify-content(center);
   @include align-items(center);
   margin-bottom: 35px;
+  padding: 0 10px;
+
+  img {
+    max-width: 100%;
+  }
 }
 
 .section-contact {
-  margin-top: -85px;
-  position: relative;
-  z-index: -1;
   margin-bottom: 35px;
   background-color: #8B9B7B;
   background-image: url(../img/familia-contato.png);
@@ -89,6 +140,38 @@ body {
   min-height: 500px;
   border-bottom-right-radius:2em;
   border-bottom-left-radius:2em;
+  margin-top: -85px;
+  position: relative;
+  z-index: -1;
+}
+
+.phase-contact {
+  margin-bottom: 35px;
+  background-color: #8B9B7B;
+  background-image: url(../img/familia-contato.png);
+  background-repeat: no-repeat;
+  background-position: right bottom;
+  background-size: 44% 62%;
+  min-height: 500px;
+  border-bottom-right-radius:2em;
+  border-bottom-left-radius:2em;
+
+  .container .phase-title {
+    background: url(../img/barra_blank.png) no-repeat center center;
+    text-align: center;
+    vertical-align: middle;
+    text-transform: uppercase;
+    line-height: 43px;
+    margin-bottom: 2em;
+    font-family: 'Open Sans';
+    font-weight: 900;
+    color: #FFFFFF;
+    font-size: 2.2em;
+    position: absolute;
+    margin-top: -22px;
+    width: 100%;
+    max-width: 1100px;
+  }
 }
 
 .section-partners {
@@ -108,7 +191,6 @@ body {
   background-color: #ffffff !important;
 }
 
-/* Form */
 .form {
   position: relative;
   z-index: 1;
@@ -137,7 +219,7 @@ body {
 }
 .form button {
   outline: 0;
-  background: #8B9C7C;
+  background: #50702D;
   width: 100%;
   border: 0;
   padding: 15px;
@@ -150,4 +232,14 @@ body {
   -webkit-transition: all 0.3 ease;
   transition: all 0.3 ease;
   cursor: pointer;
+}
+
+.msg-confirm {
+  background-color: #9AEC3C;
+  color: #fff;
+  font-weight: bold;
+  font-size: 12px;
+  display: none;
+  padding: 4px;
+  border-radius: 6px;
 }

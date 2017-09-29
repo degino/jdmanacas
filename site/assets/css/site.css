@@ -11,19 +11,57 @@ body {
   text-align: left; }
 
 .menu {
-  background: #8B9C7C;
-  height: 40px; }
+  background: #9BAA8B;
+  height: 40px;
+  padding: 0 10px; }
+  .menu .nav-right {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: end;
+    -ms-flex-pack: end;
+    -webkit-justify-content: flex-end;
+    -moz-justify-content: flex-end;
+    justify-content: flex-end;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    -moz-align-items: center;
+    align-items: center;
+    list-style-type: none;
+    margin: 0;
+    padding: 12px 0 0 0; }
+    .menu .nav-right li {
+      padding-left: 15px; }
+      .menu .nav-right li a {
+        color: #fff;
+        text-transform: uppercase;
+        text-decoration: none;
+        font-weight: 700;
+        font-size: 0.8em; }
+        .menu .nav-right li a:hover {
+          text-decoration: none;
+          color: #6A6D67; }
 
 .section-header {
-  background-color: #FFFFFF;
-  min-height: 550px;
-  background-image: url(../img/banner_completo.png);
-  background-repeat: no-repeat;
-  background-position: left top;
-  background-size: 100% 100%;
+  background: #FFFFFF url(../img/bg-top-bar.png) repeat-x left top;
   margin-bottom: -20px; }
+  .section-header .container {
+    background-image: url(../img/banner_completo.png);
+    background-repeat: no-repeat;
+    background-position: left top;
+    background-size: 100% 100%;
+    min-height: 410px; }
+    @media (max-width: 699px) {
+      .section-header .container {
+        min-height: 268px; } }
+    @media (max-width: 1039px) {
+      .section-header .container {
+        min-height: 320px; } }
 
-.phase .phase-title {
+.phase .phase-title, .phase .container .phase-title {
   background: url(../img/barra_blank.png) no-repeat center center;
   text-align: center;
   vertical-align: middle;
@@ -60,7 +98,8 @@ body {
   -webkit-align-items: center;
   -moz-align-items: center;
   align-items: center;
-  margin-bottom: 35px; }
+  margin-bottom: 35px;
+  padding: 0 10px; }
   .section-gallery img {
     width: 22%; }
 
@@ -86,7 +125,10 @@ body {
   -webkit-align-items: center;
   -moz-align-items: center;
   align-items: center;
-  margin-bottom: 35px; }
+  margin-bottom: 35px;
+  padding: 0 10px; }
+  .section-build img {
+    max-width: 100%; }
 
 .section-location {
   display: -webkit-box;
@@ -110,12 +152,26 @@ body {
   -webkit-align-items: center;
   -moz-align-items: center;
   align-items: center;
-  margin-bottom: 35px; }
+  margin-bottom: 35px;
+  padding: 0 10px; }
+  .section-location img {
+    max-width: 100%; }
 
 .section-contact {
+  margin-bottom: 35px;
+  background-color: #8B9B7B;
+  background-image: url(../img/familia-contato.png);
+  background-repeat: no-repeat;
+  background-position: right bottom;
+  background-size: 44% 62%;
+  min-height: 500px;
+  border-bottom-right-radius: 2em;
+  border-bottom-left-radius: 2em;
   margin-top: -85px;
   position: relative;
-  z-index: -1;
+  z-index: -1; }
+
+.phase-contact {
   margin-bottom: 35px;
   background-color: #8B9B7B;
   background-image: url(../img/familia-contato.png);
@@ -125,6 +181,21 @@ body {
   min-height: 500px;
   border-bottom-right-radius: 2em;
   border-bottom-left-radius: 2em; }
+  .phase-contact .container .phase-title {
+    background: url(../img/barra_blank.png) no-repeat center center;
+    text-align: center;
+    vertical-align: middle;
+    text-transform: uppercase;
+    line-height: 43px;
+    margin-bottom: 2em;
+    font-family: 'Open Sans';
+    font-weight: 900;
+    color: #FFFFFF;
+    font-size: 2.2em;
+    position: absolute;
+    margin-top: -22px;
+    width: 100%;
+    max-width: 1100px; }
 
 .section-partners {
   display: -webkit-box;
@@ -156,7 +227,6 @@ body {
 .white {
   background-color: #ffffff !important; }
 
-/* Form */
 .form {
   position: relative;
   z-index: 1;
@@ -185,7 +255,7 @@ body {
 
 .form button {
   outline: 0;
-  background: #8B9C7C;
+  background: #50702D;
   width: 100%;
   border: 0;
   padding: 15px;
@@ -198,3 +268,12 @@ body {
   -webkit-transition: all 0.3 ease;
   transition: all 0.3 ease;
   cursor: pointer; }
+
+.msg-confirm {
+  background-color: #9AEC3C;
+  color: #fff;
+  font-weight: bold;
+  font-size: 12px;
+  display: none;
+  padding: 4px;
+  border-radius: 6px; }

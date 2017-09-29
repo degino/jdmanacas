@@ -9,15 +9,30 @@
   <!-- build:css assets/css/fullsite.css -->
   <link href="assets/css/reset.css" rel="stylesheet" type="text/css" media="all" />
   <link href="assets/css/site.css" rel="stylesheet" type="text/css" media="all" />
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:200,300,400,400i,500,600,700%7CMerriweather:300,300i" rel="stylesheet">
   <!-- endbuild -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:200,300,400,400i,500,600,700%7CMerriweather:300,300i" rel="stylesheet">
 </head>
 <body>
-  <div class="container">
-    <div class="section-header">
+  <nav class="menu">
+    <div class="container">
+      <ul class="nav-right">
+        <li><a href="/jardim-dos-manacas" data-goto="index">Início</a></li>
+        <li><a data-goto="section-gallery">Galeria</a></li>
+        <li><a data-goto="section-build">Obras</a></li>
+        <li><a data-goto="section-location">Como chegar</a></li>
+        <li><a data-goto="section-contact">Contato</a></li>
+      </ul>
+    </div>
+  </nav>
+  <div class="section-header">
+    <div class="container">
 
     </div>
-    <section class="phase">
+  </div>
+
+  <a name="section-gallery" />
+  <section class="phase">
+    <div class="container">
       <h2 class="phase-title">Galeria</h2>
       <div class="section-gallery">
         <img src="assets/img/gallery-01.jpg" alt="Galeria 01" />
@@ -25,61 +40,108 @@
         <img src="assets/img/gallery-03.jpg" alt="Galeria 03" />
         <img src="assets/img/gallery-04.jpg" alt="Galeria 04" />
       </div>
-    </section>
-    <section class="phase">
+    </div>
+  </section>
+
+  <a name="section-build" />
+  <section class="phase">
+    <div class="container">
       <h2 class="phase-title">Andamento das obras</h2>
       <div class="section-build">
         <img src="assets/img/tabela-obras.jpg" alt="Tabela de obras">
       </div>
-    </section>
-    <section class="phase">
+    </div>
+  </section>
+
+  <a name="section-location" />
+  <section class="phase">
+    <div class="container">
       <h2 class="phase-title">Como chegar</h2>
       <div class="section-location">
         <img src="assets/img/como-chegar.jpg" alt="Como chegar">
       </div>
-    </section>
-    <section class="phase">
+    </div>
+  </section>
+
+  <a name="section-contact"></a>
+  <section class="phase-contact">
+    <div class="container">
       <h2 class="phase-title">Contato</h2>
-      <div class="section-contact">
+
+
         <form class="form">
-          <input type="text" placeholder="Nome" />
-          <input type="text" placeholder="Email" />
-          <input type="text" placeholder="Telefone" />
-          <button>cadastrar</button>
-       </form>
-      </div>
-    </section>
-    <section class="phase white">
-      <div class="section-partners">
-        <img src="assets/img/logo-avt.png" alt="AVT">
-      </div>
-    </section>
-  </div>
+          <input type="text" class="campo-nome" placeholder="Nome" />
+          <input type="text" class="campo-email" placeholder="Email" />
+          <input type="text" class="campo-telefone" placeholder="Telefone" />
+          <button class="btn-cadastra">cadastrar</button>
+          <div class="msg-confirm">
+            Obrigado pelo cadastro, em breve entraremos em contato !
+          </div>
+        </form>
 
-  <!-- <script src="assets/js/jquery.min.js"></script> -->
+
+
+    </div>
+  </section>
+  <section class="phase white">
+    <div class="section-partners">
+      <img src="assets/img/logo-avt.png" alt="AVT">
+    </div>
+  </section>
+
+
+  <script src="assets/js/jquery.min.js"></script>
   <script>
-  // var formulario = new FormData();
-  //   formulario.append("nome", nome);
-  //   formulario.append("telefone", celular);
-  //   formulario.append("email", email);
-  //   formulario.append("interesse", "Jardim dos Manacas");
-  //   formulario.append("comosoube", "Internet");
 
-  //   var settings = {
-  //     "async": true,
-  //     "crossDomain": true,
-  //     "url": "http://aquisevivebem.com.br/paginas/acoes.php?op=parte",
-  //     "method": "POST",
-  //     "processData": false,
-  //     "contentType": false,
-  //     "mimeType": "multipart/form-data",
-  //     "data": formulario,
-  //     "context": this
-  //   }
+    $(function () {
 
-  //   $.ajax(settings).done(function (response) {
-  //     this.setState({ data: formulario, statusIsDisabled: false, statusMessage: 'Obrigado por se cadastrar !', statusType: 'success' });
-  //   });
+      $(".btn-cadastra").click(function(e){
+        e.preventDefault();
+        var formulario = new FormData();
+        formulario.append("nome", $(".campo-nome").val());
+        formulario.append("telefone", $(".campo-telefone").val());
+        formulario.append("email", $(".campo-email").val());
+        formulario.append("interesse", "Jardim dos Manacas");
+        formulario.append("comosoube", "Internet");
+
+        var settings = {
+          "async": true,
+          "crossDomain": true,
+          "url": "http://aquisevivebem.com.br/paginas/acoes.php?op=parte",
+          "method": "POST",
+          "processData": false,
+          "contentType": false,
+          "mimeType": "multipart/form-data",
+          "data": formulario,
+          "context": this
+        }
+
+        $.ajax(settings).done(function (response) {
+          $(".btn-cadastra").hide();
+          $(".msg-confirm").show();
+        });
+      });
+
+      function scrollToAnchor(aid) {
+        var aTag = $("a[name='" + aid + "']");
+        $('html,body').animate({ scrollTop: aTag.offset().top }, 'slow');
+      }
+
+      $(".nav-right li a").each(function(index, elem) {
+        $(elem).click(function(e){
+          e.preventDefault();
+          var valor = $(this).data("goto");
+
+          if(valor !== "index") {
+            scrollToAnchor(valor);
+          } else {
+            window.location.href = 'http://aquisevivebem.com.br/jardim-dos-manacas';
+          }
+            
+        });
+      });
+        
+    });
 
   </script>
 </body>

@@ -85,13 +85,13 @@ gulp.task('comp-twig', function () {
 
 /* Concatenação */
 gulp.task('useref', () => {
-  return gulp.src('site/views/base.html')
+  return gulp.src('site/index.html')
     .pipe($.useref())
     .pipe($.if('*.html', $.inlineSource()))
     .pipe($.if('*.html', $.htmlmin({ collapseWhitespace: true })))
     .pipe($.if('*.js', $.uglify()))
     .pipe($.if('*.css', $.cssnano({ safe: true })))
-    .pipe(gulp.dest('dist/views/'));
+    .pipe(gulp.dest('dist/'));
 });
 
 /* Imagens */
