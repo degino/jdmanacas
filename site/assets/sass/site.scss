@@ -30,6 +30,9 @@ body {
 
     li {
       padding-left: 15px;
+      @include media("<=355px") {
+        padding-left: 8px;
+      }
 
       a {
         color: #fff;
@@ -37,7 +40,9 @@ body {
         text-decoration: none;
         font-weight: 700;
         font-size: 0.8em;
-
+        @include media(">=500px") {
+          font-size: 1.1em;
+        }
         &:hover {
           text-decoration: none;
           color: #6A6D67;
@@ -56,16 +61,27 @@ body {
     background-repeat: no-repeat;
     background-position: left top;
     background-size: 100% 100%;
-    min-height: 410px;
+    min-height: 200px;
 
-    @include media("<700px") {
-      min-height: 268px;
+    @include media(">=358px") {
+      min-height: 220px;
     }
 
-    @include media("<1040px") {
-      min-height: 320px;
+    @include media(">=480px") {
+      min-height: 260px;
     }
 
+    @include media(">=620px") {
+      min-height: 290px;
+    }
+
+    @include media(">=776px") {
+      min-height: 340px;
+    }
+
+    @include media(">=1000px") {
+      min-height: 390px;
+    }
   }
 }
 
@@ -100,7 +116,10 @@ body {
   padding: 0 10px;
 
   img {
-    width: 22%;
+    width: 40%;
+    @include media(">=580px") {
+      width: 22%;
+    }
   }
 }
 
@@ -148,13 +167,17 @@ body {
 .phase-contact {
   margin-bottom: 35px;
   background-color: #8B9B7B;
-  background-image: url(../img/familia-contato.png);
+  background-image: url(../img/casal-contato.png);
   background-repeat: no-repeat;
   background-position: right bottom;
-  background-size: 44% 62%;
+  background-size: 50%;
   min-height: 500px;
   border-bottom-right-radius:2em;
   border-bottom-left-radius:2em;
+
+  @include media(">=1060px") {
+    background-size: 30% 70%;
+  }
 
   .container .phase-title {
     background: url(../img/barra_blank.png) no-repeat center center;
@@ -179,11 +202,13 @@ body {
   @include flex-direction(row);
   @include justify-content(center);
   @include align-items(center);
-  padding-bottom: 38px;
-  padding-top: 45px;
+  padding-bottom: 18px;
+  padding-top: 20px;
 
   img {
+    width: 35%;
     max-width: 138px;
+    margin: 0 10px;
   }
 }
 

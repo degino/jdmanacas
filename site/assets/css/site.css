@@ -35,12 +35,18 @@ body {
     padding: 12px 0 0 0; }
     .menu .nav-right li {
       padding-left: 15px; }
+      @media (max-width: 355px) {
+        .menu .nav-right li {
+          padding-left: 8px; } }
       .menu .nav-right li a {
         color: #fff;
         text-transform: uppercase;
         text-decoration: none;
         font-weight: 700;
         font-size: 0.8em; }
+        @media (min-width: 500px) {
+          .menu .nav-right li a {
+            font-size: 1.1em; } }
         .menu .nav-right li a:hover {
           text-decoration: none;
           color: #6A6D67; }
@@ -53,13 +59,22 @@ body {
     background-repeat: no-repeat;
     background-position: left top;
     background-size: 100% 100%;
-    min-height: 410px; }
-    @media (max-width: 699px) {
+    min-height: 200px; }
+    @media (min-width: 358px) {
       .section-header .container {
-        min-height: 268px; } }
-    @media (max-width: 1039px) {
+        min-height: 220px; } }
+    @media (min-width: 480px) {
       .section-header .container {
-        min-height: 320px; } }
+        min-height: 260px; } }
+    @media (min-width: 620px) {
+      .section-header .container {
+        min-height: 290px; } }
+    @media (min-width: 776px) {
+      .section-header .container {
+        min-height: 340px; } }
+    @media (min-width: 1000px) {
+      .section-header .container {
+        min-height: 390px; } }
 
 .phase .phase-title, .phase .container .phase-title {
   background: url(../img/barra_blank.png) no-repeat center center;
@@ -101,7 +116,10 @@ body {
   margin-bottom: 35px;
   padding: 0 10px; }
   .section-gallery img {
-    width: 22%; }
+    width: 40%; }
+    @media (min-width: 580px) {
+      .section-gallery img {
+        width: 22%; } }
 
 .section-build {
   display: -webkit-box;
@@ -174,13 +192,16 @@ body {
 .phase-contact {
   margin-bottom: 35px;
   background-color: #8B9B7B;
-  background-image: url(../img/familia-contato.png);
+  background-image: url(../img/casal-contato.png);
   background-repeat: no-repeat;
   background-position: right bottom;
-  background-size: 44% 62%;
+  background-size: 50%;
   min-height: 500px;
   border-bottom-right-radius: 2em;
   border-bottom-left-radius: 2em; }
+  @media (min-width: 1060px) {
+    .phase-contact {
+      background-size: 30% 70%; } }
   .phase-contact .container .phase-title {
     background: url(../img/barra_blank.png) no-repeat center center;
     text-align: center;
@@ -219,10 +240,12 @@ body {
   -webkit-align-items: center;
   -moz-align-items: center;
   align-items: center;
-  padding-bottom: 38px;
-  padding-top: 45px; }
+  padding-bottom: 18px;
+  padding-top: 20px; }
   .section-partners img {
-    max-width: 138px; }
+    width: 35%;
+    max-width: 138px;
+    margin: 0 10px; }
 
 .white {
   background-color: #ffffff !important; }
