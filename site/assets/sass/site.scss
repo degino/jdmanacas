@@ -80,7 +80,7 @@ body {
     }
 
     @include media(">=1000px") {
-      min-height: 390px;
+      min-height: 410px;
     }
   }
 }
@@ -195,6 +195,19 @@ body {
     width: 100%;
     max-width: 1100px;
   }
+
+  .container .address-area {
+    p {
+      color: #fff;
+      font-size: 1.1em;
+      line-height: 2em;
+    }
+
+    padding: 30px 0;
+    margin: 0 auto;
+    text-align: center;
+  }
+
 }
 
 .section-partners {
@@ -206,9 +219,9 @@ body {
   padding-top: 20px;
 
   img {
-    width: 35%;
-    max-width: 138px;
-    margin: 0 10px;
+    width: 28%;
+    max-width: 365px;
+    margin: 0 8px;
   }
 }
 
@@ -257,6 +270,7 @@ body {
   -webkit-transition: all 0.3 ease;
   transition: all 0.3 ease;
   cursor: pointer;
+  text-transform: uppercase;
 }
 
 .msg-confirm {
