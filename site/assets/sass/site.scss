@@ -116,9 +116,10 @@ body {
   padding: 0 10px;
 
   img {
+    margin: 5px 0;
     width: 40%;
     @include media(">=580px") {
-      width: 22%;
+      width: 30%;
     }
   }
 }
