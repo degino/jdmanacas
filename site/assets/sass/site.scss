@@ -116,9 +116,13 @@ body {
   padding: 0 10px;
 
   img {
-    margin: 5px 0;
-    width: 40%;
-    @include media(">=580px") {
+    margin: 6px 0;
+    width: 95%;
+    border-radius: 6px;
+    @include media(">=385px") {
+      width: 48%;
+    }
+    @include media(">=857px") {
       width: 30%;
     }
   }
@@ -148,37 +152,48 @@ body {
   img {
     max-width: 100%;
   }
+
+  .iframe-maps {
+    width: 100%;
+    height: 410px;
+  }
 }
 
-.section-contact {
-  margin-bottom: 35px;
-  background-color: #8B9B7B;
-  background-image: url(../img/familia-contato.png);
-  background-repeat: no-repeat;
-  background-position: right bottom;
-  background-size: 44% 62%;
-  min-height: 500px;
-  border-bottom-right-radius:2em;
-  border-bottom-left-radius:2em;
-  margin-top: -85px;
-  position: relative;
-  z-index: -1;
-}
+// .section-contact {
+//   margin-bottom: 35px;
+//   background-color: #8B9B7B;
+//   min-height: 500px;
+//   border-bottom-right-radius:2em;
+//   border-bottom-left-radius:2em;
+//   margin-top: -85px;
+//   position: relative;
+//   z-index: -1;
+
+//   @include media(">=765px") {
+//     background-image: url(../img/familia-contato.png);
+//     background-repeat: no-repeat;
+//     background-position: right bottom;
+//     background-size: 44% 62%;
+//   }
+// }
 
 .phase-contact {
   margin-bottom: 35px;
   background-color: #8B9B7B;
-  background-image: url(../img/casal-contato.png);
-  background-repeat: no-repeat;
-  background-position: right bottom;
-  background-size: 50%;
   min-height: 500px;
   border-bottom-right-radius:2em;
   border-bottom-left-radius:2em;
 
-  @include media(">=1060px") {
-    background-size: 30% 70%;
+  @include media(">=765px") {
+    background-image: url(../img/casal-contato.png);
+    background-repeat: no-repeat;
+    background-position: 110% 100%;
+    background-size: 40%;
   }
+
+  // @include media(">=1060px") {
+  //   background-size: 30% 70%;
+  // }
 
   .container .phase-title {
     background: url(../img/barra_blank.png) no-repeat center center;
@@ -242,7 +257,7 @@ body {
   border-bottom-right-radius: 3px;
   text-align: center;
 }
-.form input {
+.form input[type=text] {
   outline: 0;
   background: #f2f2f2;
   width: 100%;
@@ -282,4 +297,16 @@ body {
   display: none;
   padding: 4px;
   border-radius: 6px;
+}
+
+.inline-radio {
+  display: block;
+  display: flex;
+  margin-bottom: .5em;  
+  align-items: flex-start;  
+
+  input[type=radio] {
+    flex: none;
+    margin-right: 10px;
+  }
 }

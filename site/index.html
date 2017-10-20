@@ -60,7 +60,8 @@
     <div class="container">
       <h2 class="phase-title">Como chegar</h2>
       <div class="section-location">
-        <img src="assets/img/como-chegar.jpg" alt="Como chegar">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3680.4080173949296!2d-47.37377568451854!3d-22.71307113669868!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94c89c9d70c23d6f%3A0x5be22d299dbd5af1!2sR.+J%C3%BAlio+P%C3%ADres+Barbosa%2C+5+-+Parque+Planalto%2C+Santa+B%C3%A1rbara+D&#39;Oeste+-+SP%2C+13455-692!5e0!3m2!1spt-BR!2sbr!4v1508497887736"
+          class="iframe-maps" frameborder="0" style="border:0" allowfullscreen></iframe>
       </div>
     </div>
   </section>
@@ -83,6 +84,14 @@
           <input type="text" class="campo-nome" placeholder="Nome" />
           <input type="text" class="campo-email" placeholder="Email" />
           <input type="text" class="campo-telefone" placeholder="Telefone" />
+
+          <label class="inline-radio">
+            <input type="radio" name="campo-tipoTerreno" value="terrenosResidComerc" checked="checked" />Terrenos Residenciais / Comerciais
+          </label>
+          <label class="inline-radio">
+            <input type="radio" name="campo-tipoTerreno" value="terrenosIndusComerc" />Terrenos Industriais / Comerciais
+          </label>
+
           <button class="btn-cadastra">cadastrar</button>
           <div class="msg-confirm">
             Obrigado pelo cadastro, em breve entraremos em contato !
@@ -111,6 +120,7 @@
         formulario.append("nome", $(".campo-nome").val());
         formulario.append("telefone", $(".campo-telefone").val());
         formulario.append("email", $(".campo-email").val());
+        formulario.append("tipoDoTerreno", $("input[name='campo-tipoTerreno']:checked").val());
         formulario.append("interesse", "Jardim dos Manacas");
         formulario.append("comosoube", "Internet");
 
