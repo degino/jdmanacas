@@ -53,35 +53,81 @@ body {
 }
 
 .section-header {
-  background: #FFFFFF url(../img/bg-top-bar.png) repeat-x left top;
-  margin-bottom: -20px;
+  background: #FFFFFF url(../img/barra-acima-banner.png) repeat-x left top;
+  padding-top: 27px;
+  margin-bottom: 2em;
+
+  .bg-landing {
+    height: 122px;
+    background-image: url(../img/all/bg-top-banner.png);
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: cover;
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+    transition: height 2s;
+
+    @include media(">=503px") {
+      height: 160px;
+    }
+
+    @include media(">=715px") {
+      height: 196px;
+    }
+
+    @include media(">=920px") {
+      height: 264px;
+    }
+  }
 
   .container {
-    background-image: url(../img/banner_completo.png);
-    background-repeat: no-repeat;
-    background-position: left top;
-    background-size: 100% 100%;
-    min-height: 200px;
+    text-align: center;
 
-    @include media(">=358px") {
-      min-height: 220px;
+    @include media(">=920px") {
+      text-align: left;
     }
 
-    @include media(">=480px") {
-      min-height: 260px;
+    .logo-mobile {
+      margin-top: -27px;
+
+      @include media(">=920px") {
+        margin-left: 65px;
+      }
     }
 
-    @include media(">=620px") {
-      min-height: 290px;
+    .tabs-info {
+      @include flexbox;
+      @include justify-content(space-around);
+      @include align-items(flex-start);
+
+      img:first-child {
+        display: none;
+
+        @include media(">=920px") {
+          display: block;
+          width: 32.1%;
+          margin-top: -130px;
+        }
+      }
+      
+      img {
+        width: 31%;
+        transition: width 2s;
+
+        @include media(">=503px") {
+          width: 28%;
+        }
+
+        @include media(">=715px") {
+          width: 22%;
+        }
+
+        @include media(">=920px") {
+          width: auto;
+        }
+      }
     }
 
-    @include media(">=776px") {
-      min-height: 340px;
-    }
-
-    @include media(">=1000px") {
-      min-height: 410px;
-    }
   }
 }
 
@@ -159,24 +205,6 @@ body {
   }
 }
 
-// .section-contact {
-//   margin-bottom: 35px;
-//   background-color: #8B9B7B;
-//   min-height: 500px;
-//   border-bottom-right-radius:2em;
-//   border-bottom-left-radius:2em;
-//   margin-top: -85px;
-//   position: relative;
-//   z-index: -1;
-
-//   @include media(">=765px") {
-//     background-image: url(../img/familia-contato.png);
-//     background-repeat: no-repeat;
-//     background-position: right bottom;
-//     background-size: 44% 62%;
-//   }
-// }
-
 .phase-contact {
   margin-bottom: 35px;
   background-color: #8B9B7B;
@@ -185,7 +213,7 @@ body {
   border-bottom-left-radius:2em;
 
   @include media(">=765px") {
-    background-image: url(../img/casal-contato.png);
+    //background-image: url(../img/casal-contato.png);
     background-repeat: no-repeat;
     background-position: 110% 100%;
     background-size: 40%;

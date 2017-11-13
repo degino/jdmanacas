@@ -52,29 +52,71 @@ body {
           color: #6A6D67; }
 
 .section-header {
-  background: #FFFFFF url(../img/bg-top-bar.png) repeat-x left top;
-  margin-bottom: -20px; }
-  .section-header .container {
-    background-image: url(../img/banner_completo.png);
+  background: #FFFFFF url(../img/barra-acima-banner.png) repeat-x left top;
+  padding-top: 27px;
+  margin-bottom: 2em; }
+  .section-header .bg-landing {
+    height: 122px;
+    background-image: url(../img/all/bg-top-banner.png);
     background-repeat: no-repeat;
-    background-position: left top;
-    background-size: 100% 100%;
-    min-height: 200px; }
-    @media (min-width: 358px) {
+    background-position: center top;
+    background-size: cover;
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+    transition: height 2s; }
+    @media (min-width: 503px) {
+      .section-header .bg-landing {
+        height: 160px; } }
+    @media (min-width: 715px) {
+      .section-header .bg-landing {
+        height: 196px; } }
+    @media (min-width: 920px) {
+      .section-header .bg-landing {
+        height: 264px; } }
+  .section-header .container {
+    text-align: center; }
+    @media (min-width: 920px) {
       .section-header .container {
-        min-height: 220px; } }
-    @media (min-width: 480px) {
-      .section-header .container {
-        min-height: 260px; } }
-    @media (min-width: 620px) {
-      .section-header .container {
-        min-height: 290px; } }
-    @media (min-width: 776px) {
-      .section-header .container {
-        min-height: 340px; } }
-    @media (min-width: 1000px) {
-      .section-header .container {
-        min-height: 410px; } }
+        text-align: left; } }
+    .section-header .container .logo-mobile {
+      margin-top: -27px; }
+      @media (min-width: 920px) {
+        .section-header .container .logo-mobile {
+          margin-left: 65px; } }
+    .section-header .container .tabs-info {
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -moz-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-pack: distribute;
+      -webkit-justify-content: space-around;
+      -moz-justify-content: space-around;
+      justify-content: space-around;
+      -webkit-box-align: start;
+      -ms-flex-align: start;
+      -webkit-align-items: flex-start;
+      -moz-align-items: flex-start;
+      align-items: flex-start; }
+      .section-header .container .tabs-info img:first-child {
+        display: none; }
+        @media (min-width: 920px) {
+          .section-header .container .tabs-info img:first-child {
+            display: block;
+            width: 32.1%;
+            margin-top: -130px; } }
+      .section-header .container .tabs-info img {
+        width: 31%;
+        transition: width 2s; }
+        @media (min-width: 503px) {
+          .section-header .container .tabs-info img {
+            width: 28%; } }
+        @media (min-width: 715px) {
+          .section-header .container .tabs-info img {
+            width: 22%; } }
+        @media (min-width: 920px) {
+          .section-header .container .tabs-info img {
+            width: auto; } }
 
 .phase .phase-title, .phase .container .phase-title {
   background: url(../img/barra_blank.png) no-repeat center center;
@@ -191,7 +233,6 @@ body {
   border-bottom-left-radius: 2em; }
   @media (min-width: 765px) {
     .phase-contact {
-      background-image: url(../img/casal-contato.png);
       background-repeat: no-repeat;
       background-position: 110% 100%;
       background-size: 40%; } }
